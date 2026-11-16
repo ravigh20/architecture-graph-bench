@@ -1,0 +1,187 @@
+{
+  "csv_files": [
+    {
+      "file": "boutique/metrics.csv",
+      "identical": true
+    },
+    {
+      "file": "boutique/queries.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/annotated/bins.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/annotated/proposals.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/annotated/selection_decisions.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/annotated/thresholds.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/raw_normalized/bins.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/raw_normalized/proposals.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/raw_normalized/selection_decisions.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/raw_normalized/thresholds.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/raw_published_aliases/bins.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/raw_published_aliases/proposals.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/raw_published_aliases/selection_decisions.csv",
+      "identical": true
+    },
+    {
+      "file": "calibration/raw_published_aliases/thresholds.csv",
+      "identical": true
+    },
+    {
+      "file": "diagnostics/bridge_results.csv",
+      "identical": true
+    },
+    {
+      "file": "diagnostics/support_decisions.csv",
+      "identical": true
+    },
+    {
+      "file": "diagnostics/support_raw.csv",
+      "identical": true
+    },
+    {
+      "file": "diagnostics/support_summary.csv",
+      "identical": true
+    },
+    {
+      "file": "diagnostics/weight_points.csv",
+      "identical": true
+    },
+    {
+      "file": "diagnostics/weight_settings.csv",
+      "identical": true
+    },
+    {
+      "file": "evidence/evidence_index.csv",
+      "identical": true
+    },
+    {
+      "file": "evidence/source_locator_ledger.csv",
+      "identical": true
+    },
+    {
+      "file": "membership/candidates.csv",
+      "identical": true
+    },
+    {
+      "file": "membership/confidence_decisions.csv",
+      "identical": true
+    },
+    {
+      "file": "membership/confidence_predictions.csv",
+      "identical": true
+    },
+    {
+      "file": "membership/method_scores.csv",
+      "identical": true
+    },
+    {
+      "file": "membership/queries.csv",
+      "identical": true
+    },
+    {
+      "file": "replay/annotated_paired.csv",
+      "identical": true
+    },
+    {
+      "file": "replay/annotated_path_answers.csv",
+      "identical": true
+    },
+    {
+      "file": "replay/annotated_scores.csv",
+      "identical": true
+    },
+    {
+      "file": "replay/raw_normalized_paired.csv",
+      "identical": true
+    },
+    {
+      "file": "replay/raw_normalized_path_answers.csv",
+      "identical": true
+    },
+    {
+      "file": "replay/raw_normalized_scores.csv",
+      "identical": true
+    },
+    {
+      "file": "replay/raw_published_aliases_paired.csv",
+      "identical": true
+    },
+    {
+      "file": "replay/raw_published_aliases_path_answers.csv",
+      "identical": true
+    },
+    {
+      "file": "replay/raw_published_aliases_scores.csv",
+      "identical": true
+    },
+    {
+      "file": "table_III_tasks.csv",
+      "identical": true
+    },
+    {
+      "file": "table_II_support_transitions.csv",
+      "identical": true
+    },
+    {
+      "file": "table_IV_conventions.csv",
+      "identical": true
+    },
+    {
+      "file": "table_IX_replay.csv",
+      "identical": true
+    },
+    {
+      "file": "table_I_related_work.csv",
+      "identical": true
+    },
+    {
+      "file": "table_VIII_membership.csv",
+      "identical": true
+    },
+    {
+      "file": "table_VII_boutique.csv",
+      "identical": true
+    },
+    {
+      "file": "table_VI_support_controls.csv",
+      "identical": true
+    },
+    {
+      "file": "table_V_structural_arithmetic.csv",
+      "identical": true
+    }
+  ],
+  "comparison": "Historical-reference first run versus clean-room historical-reference run, both with figures",
+  "count": 45,
+  "identical": 45
+}

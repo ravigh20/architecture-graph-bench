@@ -1,0 +1,7 @@
+{
+  "filename": "ArchGraphBench_Proofread_Submission_Candidate(1).pdf",
+  "sha256": "afa669b35ccb1e40b23d74c863ca7c72f4ac75838babfd80c504914323997f6a",
+  "scope": "Diagnostics, Boutique, four-application membership, annotated archived replay, held-out edge calibration",
+  "runtime_input": false,
+  "validation": "See validation/VERIFICATION.md for observed results and unresolved raw-sensitivity claim."
+}

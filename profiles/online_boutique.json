@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "profile_id": "online-boutique-v0.10.3-declared-scope",
+  "description": "Question definitions and masking procedure for the retained Online Boutique experiment. No reference graph, expected answers, or target scores are provided.",
+  "scope": "boutique-declared-v1",
+  "source_attribution": {
+    "project": "GoogleCloudPlatform/microservices-demo",
+    "declared_release": "v0.10.3",
+    "declared_commit": "cd1cb59f6fce3e2ccf08be7cea743e3784932d73",
+    "qualification": "The supplied source is the historical retained transcription. These attribution fields are not independent authentication of the YAML bytes."
+  },
+  "queries": [
+    {
+      "id": "Q1",
+      "kind": "path",
+      "source": "entry:frontend-external",
+      "target": "checkoutservice",
+      "family": "declared_entry_path",
+      "weight": 1,
+      "scope": "Only paths in the scoped manifest-derived graph; not network-policy enforcement or actual traffic."
+    },
+    {
+      "id": "Q2",
+      "kind": "path",
+      "source": "entry:frontend-external",
+      "target": "paymentservice",
+      "family": "declared_entry_path",
+      "weight": 1,
+      "scope": "Only paths in the scoped manifest-derived graph; not network-policy enforcement or actual traffic."
+    },
+    {
+      "id": "Q3",
+      "kind": "path",
+      "source": "entry:frontend-external",
+      "target": "redis-cart",
+      "family": "declared_entry_path",
+      "weight": 1,
+      "scope": "Only paths in the scoped manifest-derived graph; not network-policy enforcement or actual traffic."
+    },
+    {
+      "id": "Q4",
+      "kind": "path",
+      "source": "frontend",
+      "target": "paymentservice",
+      "family": "internal_dependency",
+      "weight": 1,
+      "scope": "Only paths in the scoped manifest-derived graph; not network-policy enforcement or actual traffic."
+    },
+    {
+      "id": "Q5",
+      "kind": "path",
+      "source": "checkoutservice",
+      "target": "redis-cart",
+      "family": "internal_dependency",
+      "weight": 1,
+      "scope": "Only paths in the scoped manifest-derived graph; not network-policy enforcement or actual traffic."
+    },
+    {
+      "id": "Q6",
+      "kind": "identity",
+      "source": "paymentservice",
+      "target": "sa:paymentservice",
+      "family": "identity_assignment",
+      "weight": 1,
+      "scope": "Only paths in the scoped manifest-derived graph; not network-policy enforcement or actual traffic."
+    },
+    {
+      "id": "Q7",
+      "kind": "direct_entry",
+      "source": "entry:frontend-external",
+      "target": "redis-cart",
+      "family": "declared_nonedge",
+      "weight": 1,
+      "scope": "Only paths in the scoped manifest-derived graph; not network-policy enforcement or actual traffic."
+    },
+    {
+      "id": "Q8",
+      "kind": "path",
+      "source": "paymentservice",
+      "target": "frontend",
+      "family": "declared_nonpath",
+      "weight": 1,
+      "scope": "Only paths in the scoped manifest-derived graph; not network-policy enforcement or actual traffic."
+    }
+  ],
+  "mask": {
+    "kind": "Deployment",
+    "resource": "checkoutservice",
+    "env_name": "PAYMENT_SERVICE_ADDR",
+    "replacement": "__WITHHELD__",
+    "required_change_count": 1
+  }
+}

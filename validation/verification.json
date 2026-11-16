@@ -1,0 +1,766 @@
+{
+  "release": "4.0.0-submission-demo",
+  "manuscript": {
+    "filename": "ArchGraphBench_Proofread_Submission_Candidate(1).pdf",
+    "sha256": "afa669b35ccb1e40b23d74c863ca7c72f4ac75838babfd80c504914323997f6a",
+    "scope": "Diagnostics, Boutique, four-application membership, annotated archived replay, held-out edge calibration",
+    "runtime_input": false,
+    "validation": "See validation/VERIFICATION.md for observed results and unresolved raw-sensitivity claim."
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "windows_executed": false
+  },
+  "tests": {
+    "total": 216,
+    "failures": 0,
+    "errors": 0,
+    "groups": {
+      "test_bookinfo": {
+        "failed": 0,
+        "passed": 6,
+        "skipped": 0,
+        "tests": 6
+      },
+      "test_boutique": {
+        "failed": 0,
+        "passed": 18,
+        "skipped": 0,
+        "tests": 18
+      },
+      "test_core": {
+        "failed": 0,
+        "passed": 41,
+        "skipped": 0,
+        "tests": 41
+      },
+      "test_diagnostics": {
+        "failed": 0,
+        "passed": 36,
+        "skipped": 0,
+        "tests": 36
+      },
+      "test_execution_logging": {
+        "failed": 0,
+        "passed": 29,
+        "skipped": 0,
+        "tests": 29
+      },
+      "test_reference_builder": {
+        "failed": 0,
+        "passed": 34,
+        "skipped": 0,
+        "tests": 34
+      },
+      "test_submission": {
+        "failed": 0,
+        "passed": 40,
+        "skipped": 0,
+        "tests": 40
+      },
+      "test_workflow": {
+        "failed": 0,
+        "passed": 12,
+        "skipped": 0,
+        "tests": 12
+      }
+    }
+  },
+  "workflow": {
+    "finished": "2026-11-16T12:45:53.949641+00:00",
+    "inputs_unchanged": true,
+    "reference_mode": "generated",
+    "started": "2026-11-16T12:45:28.594217+00:00",
+    "status": "COMPLETED",
+    "steps": [
+      {
+        "command": [
+          "/opt/pyvenv/bin/python",
+          "-u",
+          "/mnt/data/agb_submission_work/package/build_reference.py",
+          "--input",
+          "/mnt/data/agb_submission_work/package/data/public_case/source/kubernetes-manifests.yaml",
+          "--out",
+          "/mnt/data/AGB_Submission_Evidence/generated_reference",
+          "--demo",
+          "--trace-limit",
+          "50"
+        ],
+        "name": "build_reference",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "/opt/pyvenv/bin/python",
+          "-u",
+          "/mnt/data/agb_submission_work/package/build_reference.py",
+          "verify",
+          "--input",
+          "/mnt/data/agb_submission_work/package/data/public_case/source/kubernetes-manifests.yaml",
+          "--reference",
+          "/mnt/data/AGB_Submission_Evidence/generated_reference/reference.json",
+          "--demo",
+          "--trace-limit",
+          "50"
+        ],
+        "name": "verify_reference",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "/opt/pyvenv/bin/python",
+          "-u",
+          "/mnt/data/agb_submission_work/package/process.py",
+          "--data",
+          "/mnt/data/agb_submission_work/package/data",
+          "--out",
+          "/mnt/data/AGB_Submission_Evidence/results",
+          "--demo",
+          "--trace-limit",
+          "50",
+          "--plots",
+          "--source",
+          "/mnt/data/agb_submission_work/package/data/public_case/source/kubernetes-manifests.yaml",
+          "--reference",
+          "/mnt/data/AGB_Submission_Evidence/generated_reference/reference.json",
+          "--allow-unreviewed-reference"
+        ],
+        "name": "process",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "/opt/pyvenv/bin/python",
+          "-u",
+          "/mnt/data/agb_submission_work/package/run_checks.py",
+          "--out",
+          "/mnt/data/AGB_Submission_Evidence/checks"
+        ],
+        "name": "implementation_tests",
+        "returncode": 0
+      }
+    ]
+  },
+  "output_coverage": {
+    "generated_groups": 27,
+    "human_validation_performed": false,
+    "llm_runs": "No new LLM inference; related-work aggregate scores are not experiments of this implementation.",
+    "missing": [],
+    "not_measured": [
+      "runtime security",
+      "source entailment",
+      "independent human adjudication",
+      "reviewer timing"
+    ],
+    "reference_mode": "generated_unreviewed_candidate",
+    "registered_groups": 27,
+    "scope": "Uploaded proofread submission candidate; raw-alignment conventions and acquisition qualifications are explicit.",
+    "source_locators": {
+      "resolved": 202,
+      "unique": 202,
+      "unresolved": 0
+    }
+  },
+  "input_preservation_vs_previous_demo": {
+    "original_data_files": 30,
+    "unchanged": 28,
+    "changed": [
+      "data/experiment_config.json",
+      "data/input_manifest.json"
+    ],
+    "missing": [],
+    "added": 74
+  },
+  "repeatability": {
+    "csv_files": [
+      {
+        "file": "boutique/metrics.csv",
+        "identical": true
+      },
+      {
+        "file": "boutique/queries.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/annotated/bins.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/annotated/proposals.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/annotated/selection_decisions.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/annotated/thresholds.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/raw_normalized/bins.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/raw_normalized/proposals.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/raw_normalized/selection_decisions.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/raw_normalized/thresholds.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/raw_published_aliases/bins.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/raw_published_aliases/proposals.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/raw_published_aliases/selection_decisions.csv",
+        "identical": true
+      },
+      {
+        "file": "calibration/raw_published_aliases/thresholds.csv",
+        "identical": true
+      },
+      {
+        "file": "diagnostics/bridge_results.csv",
+        "identical": true
+      },
+      {
+        "file": "diagnostics/support_decisions.csv",
+        "identical": true
+      },
+      {
+        "file": "diagnostics/support_raw.csv",
+        "identical": true
+      },
+      {
+        "file": "diagnostics/support_summary.csv",
+        "identical": true
+      },
+      {
+        "file": "diagnostics/weight_points.csv",
+        "identical": true
+      },
+      {
+        "file": "diagnostics/weight_settings.csv",
+        "identical": true
+      },
+      {
+        "file": "evidence/evidence_index.csv",
+        "identical": true
+      },
+      {
+        "file": "evidence/source_locator_ledger.csv",
+        "identical": true
+      },
+      {
+        "file": "membership/candidates.csv",
+        "identical": true
+      },
+      {
+        "file": "membership/confidence_decisions.csv",
+        "identical": true
+      },
+      {
+        "file": "membership/confidence_predictions.csv",
+        "identical": true
+      },
+      {
+        "file": "membership/method_scores.csv",
+        "identical": true
+      },
+      {
+        "file": "membership/queries.csv",
+        "identical": true
+      },
+      {
+        "file": "replay/annotated_paired.csv",
+        "identical": true
+      },
+      {
+        "file": "replay/annotated_path_answers.csv",
+        "identical": true
+      },
+      {
+        "file": "replay/annotated_scores.csv",
+        "identical": true
+      },
+      {
+        "file": "replay/raw_normalized_paired.csv",
+        "identical": true
+      },
+      {
+        "file": "replay/raw_normalized_path_answers.csv",
+        "identical": true
+      },
+      {
+        "file": "replay/raw_normalized_scores.csv",
+        "identical": true
+      },
+      {
+        "file": "replay/raw_published_aliases_paired.csv",
+        "identical": true
+      },
+      {
+        "file": "replay/raw_published_aliases_path_answers.csv",
+        "identical": true
+      },
+      {
+        "file": "replay/raw_published_aliases_scores.csv",
+        "identical": true
+      },
+      {
+        "file": "table_III_tasks.csv",
+        "identical": true
+      },
+      {
+        "file": "table_II_support_transitions.csv",
+        "identical": true
+      },
+      {
+        "file": "table_IV_conventions.csv",
+        "identical": true
+      },
+      {
+        "file": "table_IX_replay.csv",
+        "identical": true
+      },
+      {
+        "file": "table_I_related_work.csv",
+        "identical": true
+      },
+      {
+        "file": "table_VIII_membership.csv",
+        "identical": true
+      },
+      {
+        "file": "table_VII_boutique.csv",
+        "identical": true
+      },
+      {
+        "file": "table_VI_support_controls.csv",
+        "identical": true
+      },
+      {
+        "file": "table_V_structural_arithmetic.csv",
+        "identical": true
+      }
+    ],
+    "comparison": "Historical-reference first run versus clean-room historical-reference run, both with figures",
+    "count": 45,
+    "identical": 45
+  },
+  "main_replay": {
+    "applications": 17,
+    "applications_with_errors": 15,
+    "different_from_annotated": 0,
+    "ordered_pair_evaluations": 3150,
+    "paired_applications": 10,
+    "queries_per_paired_method": 1164,
+    "ranking_reversals": 2,
+    "rankings": [
+      {
+        "C_F1": 0.8055555555555556,
+        "C_errors": 23,
+        "F1_tied": false,
+        "M_F1": 0.5833333333333334,
+        "M_errors": 45,
+        "application": "java-microservice",
+        "queries": 210,
+        "ranking_reversed": false
+      },
+      {
+        "C_F1": 0.9230769230769231,
+        "C_errors": 6,
+        "F1_tied": false,
+        "M_F1": 0.5555555555555556,
+        "M_errors": 33,
+        "application": "microservice",
+        "queries": 42,
+        "ranking_reversed": false
+      },
+      {
+        "C_F1": 0.8888888888888888,
+        "C_errors": 4,
+        "F1_tied": false,
+        "M_F1": 0.9090909090909091,
+        "M_errors": 6,
+        "application": "microservice-kafka",
+        "queries": 56,
+        "ranking_reversed": true
+      },
+      {
+        "C_F1": 0.7916666666666666,
+        "C_errors": 42,
+        "F1_tied": false,
+        "M_F1": 0.42105263157894735,
+        "M_errors": 78,
+        "application": "microservices-basics-spring-boot",
+        "queries": 132,
+        "ranking_reversed": false
+      },
+      {
+        "C_F1": 1.0,
+        "C_errors": 0,
+        "F1_tied": false,
+        "M_F1": 0.5714285714285714,
+        "M_errors": 42,
+        "application": "microservices-sample",
+        "queries": 210,
+        "ranking_reversed": false
+      },
+      {
+        "C_F1": 0.8,
+        "C_errors": 40,
+        "F1_tied": false,
+        "M_F1": 0.7619047619047619,
+        "M_errors": 38,
+        "application": "spring-boot-microservices",
+        "queries": 110,
+        "ranking_reversed": true
+      },
+      {
+        "C_F1": 0.9454545454545454,
+        "C_errors": 8,
+        "F1_tied": true,
+        "M_F1": 0.9454545454545454,
+        "M_errors": 16,
+        "application": "spring-cloud-netflix-example",
+        "queries": 90,
+        "ranking_reversed": false
+      },
+      {
+        "C_F1": 0.8936170212765957,
+        "C_errors": 20,
+        "F1_tied": false,
+        "M_F1": 0.8,
+        "M_errors": 68,
+        "application": "spring-netflix-oss-microservices",
+        "queries": 110,
+        "ranking_reversed": false
+      },
+      {
+        "C_F1": 0.9642857142857143,
+        "C_errors": 11,
+        "F1_tied": false,
+        "M_F1": 0.5641025641025641,
+        "M_errors": 72,
+        "application": "spring-petclinic-microservices",
+        "queries": 132,
+        "ranking_reversed": false
+      },
+      {
+        "C_F1": 1.0,
+        "C_errors": 0,
+        "F1_tied": false,
+        "M_F1": 0.4,
+        "M_errors": 19,
+        "application": "tap-and-eat-microservices",
+        "queries": 72,
+        "ranking_reversed": false
+      }
+    ],
+    "records": 27,
+    "records_with_errors": 23
+  },
+  "calibration": {
+    "annotated": {
+      "brier": 0.07279861371641302,
+      "brier_exact": "798788031584570773178326221366585751349/10972572014849750819853740117735290272000",
+      "correct_proposals": 225,
+      "ece": {
+        "fitted_10": 0.054275369117325944,
+        "fitted_5": 0.010190830520687895,
+        "fixed_09_10": 0.022131147540983605,
+        "fixed_09_5": 0.022131147540983605
+      },
+      "fixed_09_brier": 0.07229508196721311,
+      "fixed_09_brier_exact": "441/6100",
+      "proposals": 244,
+      "reference_edges": 245,
+      "target": "Correctness of positive-edge proposals, not support entailment; low c is not a negative edge.",
+      "thresholds": [
+        {
+          "accepted": 244,
+          "applications": 10,
+          "correct": 225,
+          "errors": 19,
+          "method": "fitted",
+          "precision": 0.9221311475409836,
+          "proposal_coverage": 1.0,
+          "reference_edge_recall": 0.9183673469387755,
+          "threshold": 0.5
+        },
+        {
+          "accepted": 244,
+          "applications": 10,
+          "correct": 225,
+          "errors": 19,
+          "method": "fixed_09",
+          "precision": 0.9221311475409836,
+          "proposal_coverage": 1.0,
+          "reference_edge_recall": 0.9183673469387755,
+          "threshold": 0.5
+        },
+        {
+          "accepted": 234,
+          "applications": 10,
+          "correct": 215,
+          "errors": 19,
+          "method": "fitted",
+          "precision": 0.9188034188034188,
+          "proposal_coverage": 0.9590163934426229,
+          "reference_edge_recall": 0.8775510204081632,
+          "threshold": 0.8
+        },
+        {
+          "accepted": 244,
+          "applications": 10,
+          "correct": 225,
+          "errors": 19,
+          "method": "fixed_09",
+          "precision": 0.9221311475409836,
+          "proposal_coverage": 1.0,
+          "reference_edge_recall": 0.9183673469387755,
+          "threshold": 0.8
+        },
+        {
+          "accepted": 113,
+          "applications": 10,
+          "correct": 113,
+          "errors": 0,
+          "method": "fitted",
+          "precision": 1.0,
+          "proposal_coverage": 0.46311475409836067,
+          "reference_edge_recall": 0.46122448979591835,
+          "threshold": 0.95
+        },
+        {
+          "accepted": 0,
+          "applications": 0,
+          "correct": 0,
+          "errors": 0,
+          "method": "fixed_09",
+          "precision": null,
+          "proposal_coverage": 0.0,
+          "reference_edge_recall": 0.0,
+          "threshold": 0.95
+        }
+      ]
+    },
+    "raw_normalized": {
+      "brier": 0.09097641966487281,
+      "brier_exact": "362623873190318386559706900470631180411054177649993/3985910574697326811625249651127565513885304730835200",
+      "correct_proposals": 208,
+      "ece": {
+        "fitted_10": 0.1232081993840849,
+        "fitted_5": 0.02635461604425685,
+        "fixed_09_10": 0.2354632587859425,
+        "fixed_09_5": 0.2354632587859425
+      },
+      "fixed_09_brier": 0.278370607028754,
+      "fixed_09_brier_exact": "8713/31300",
+      "proposals": 313,
+      "reference_edges": 245,
+      "target": "Correctness of positive-edge proposals, not support entailment; low c is not a negative edge.",
+      "thresholds": [
+        {
+          "accepted": 232,
+          "applications": 10,
+          "correct": 206,
+          "errors": 26,
+          "method": "fitted",
+          "precision": 0.8879310344827587,
+          "proposal_coverage": 0.7412140575079872,
+          "reference_edge_recall": 0.8408163265306122,
+          "threshold": 0.5
+        },
+        {
+          "accepted": 313,
+          "applications": 10,
+          "correct": 208,
+          "errors": 105,
+          "method": "fixed_09",
+          "precision": 0.6645367412140575,
+          "proposal_coverage": 1.0,
+          "reference_edge_recall": 0.8489795918367347,
+          "threshold": 0.5
+        },
+        {
+          "accepted": 211,
+          "applications": 10,
+          "correct": 185,
+          "errors": 26,
+          "method": "fitted",
+          "precision": 0.8767772511848341,
+          "proposal_coverage": 0.6741214057507987,
+          "reference_edge_recall": 0.7551020408163265,
+          "threshold": 0.8
+        },
+        {
+          "accepted": 313,
+          "applications": 10,
+          "correct": 208,
+          "errors": 105,
+          "method": "fixed_09",
+          "precision": 0.6645367412140575,
+          "proposal_coverage": 1.0,
+          "reference_edge_recall": 0.8489795918367347,
+          "threshold": 0.8
+        },
+        {
+          "accepted": 38,
+          "applications": 1,
+          "correct": 22,
+          "errors": 16,
+          "method": "fitted",
+          "precision": 0.5789473684210527,
+          "proposal_coverage": 0.12140575079872204,
+          "reference_edge_recall": 0.08979591836734693,
+          "threshold": 0.95
+        },
+        {
+          "accepted": 0,
+          "applications": 0,
+          "correct": 0,
+          "errors": 0,
+          "method": "fixed_09",
+          "precision": null,
+          "proposal_coverage": 0.0,
+          "reference_edge_recall": 0.0,
+          "threshold": 0.95
+        }
+      ]
+    },
+    "raw_published_aliases": {
+      "brier": 0.08551477864494283,
+      "brier_exact": "151678414343133138815759183281304859349551773/1773709956882442249151439941790677189438976000",
+      "correct_proposals": 218,
+      "ece": {
+        "fitted_10": 0.07308092446922329,
+        "fitted_5": 0.009268920194244756,
+        "fixed_09_10": 0.16101694915254236,
+        "fixed_09_5": 0.16101694915254236
+      },
+      "fixed_09_brier": 0.2188135593220339,
+      "fixed_09_brier_exact": "1291/5900",
+      "proposals": 295,
+      "reference_edges": 245,
+      "target": "Correctness of positive-edge proposals, not support entailment; low c is not a negative edge.",
+      "thresholds": [
+        {
+          "accepted": 232,
+          "applications": 10,
+          "correct": 212,
+          "errors": 20,
+          "method": "fitted",
+          "precision": 0.9137931034482759,
+          "proposal_coverage": 0.7864406779661017,
+          "reference_edge_recall": 0.8653061224489796,
+          "threshold": 0.5
+        },
+        {
+          "accepted": 295,
+          "applications": 10,
+          "correct": 218,
+          "errors": 77,
+          "method": "fixed_09",
+          "precision": 0.7389830508474576,
+          "proposal_coverage": 1.0,
+          "reference_edge_recall": 0.889795918367347,
+          "threshold": 0.5
+        },
+        {
+          "accepted": 232,
+          "applications": 10,
+          "correct": 212,
+          "errors": 20,
+          "method": "fitted",
+          "precision": 0.9137931034482759,
+          "proposal_coverage": 0.7864406779661017,
+          "reference_edge_recall": 0.8653061224489796,
+          "threshold": 0.8
+        },
+        {
+          "accepted": 295,
+          "applications": 10,
+          "correct": 218,
+          "errors": 77,
+          "method": "fixed_09",
+          "precision": 0.7389830508474576,
+          "proposal_coverage": 1.0,
+          "reference_edge_recall": 0.889795918367347,
+          "threshold": 0.8
+        },
+        {
+          "accepted": 32,
+          "applications": 1,
+          "correct": 23,
+          "errors": 9,
+          "method": "fitted",
+          "precision": 0.71875,
+          "proposal_coverage": 0.10847457627118644,
+          "reference_edge_recall": 0.09387755102040816,
+          "threshold": 0.95
+        },
+        {
+          "accepted": 0,
+          "applications": 0,
+          "correct": 0,
+          "errors": 0,
+          "method": "fixed_09",
+          "precision": null,
+          "proposal_coverage": 0.0,
+          "reference_edge_recall": 0.0,
+          "threshold": 0.95
+        }
+      ]
+    }
+  },
+  "unresolved": {
+    "claim": "Section VII-G: raw-direction sensitivity accepts nothing at threshold 0.95",
+    "observed": {
+      "raw_normalized": {
+        "accepted": 38,
+        "applications": 1,
+        "correct": 22,
+        "errors": 16,
+        "method": "fitted",
+        "precision": 0.5789473684210527,
+        "proposal_coverage": 0.12140575079872204,
+        "reference_edge_recall": 0.08979591836734693,
+        "threshold": 0.95
+      },
+      "raw_published_aliases": {
+        "accepted": 32,
+        "applications": 1,
+        "correct": 23,
+        "errors": 9,
+        "method": "fitted",
+        "precision": 0.71875,
+        "proposal_coverage": 0.10847457627118644,
+        "reference_edge_recall": 0.09387755102040816,
+        "threshold": 0.95
+      }
+    },
+    "status": "NOT_REPRODUCED",
+    "interpretation": "Requires clarification of raw export version, name alignment, proposal eligibility, or fitting protocol. No inputs or probabilities were altered to force the claimed zero."
+  },
+  "source_acquisition": {
+    "annotated_record_count": 27,
+    "annotation_row_count": 650,
+    "method": "Browser transcription of source-study connection sections, including identified FP arrows; not upstream archive bytes.",
+    "source": "Schneider et al., EMSE2025SAR-Replication v1.1, DOI 10.5281/zenodo.14978488",
+    "fresh_upstream_byte_verification": false
+  },
+  "scope": "New local computations from retained inputs. No original recovery-tool runs, live LLM inference, human annotation independence, runtime security validation or historical test logs were fabricated."
+}

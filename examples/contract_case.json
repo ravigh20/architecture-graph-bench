@@ -1,0 +1,28 @@
+{
+  "example_status": "Illustrative structured-contract demonstration, not a new paper experiment.",
+  "codebook": {
+    "target_time": 5,
+    "release": "r1",
+    "eligible_sources": ["binding", "negative-control", "expired-source"],
+    "admitted_derivations": [],
+    "complete": false
+  },
+  "reference_edges": [["entry", "declared_entry", "frontend"], ["frontend", "configured_dependency", "payment"], ["payment", "assigned_service_account", "sa:payment"]],
+  "prediction_edges": [["entry", "declared_entry", "frontend"], ["frontend", "configured_dependency", "payment"], ["payment", "assigned_service_account", "sa:payment"]],
+  "possible_edges": [],
+  "queries": [
+    {"id":"payment_path", "kind":"path", "source":"entry", "target":"payment", "family":"flow"},
+    {"id":"identity", "kind":"identity", "source":"payment", "target":"sa:payment", "family":"identity"}
+  ],
+  "family_weights": {"flow": 1, "identity": 1},
+  "support_records": [
+    {"proposition":"payment_path", "source":"binding", "polarity":"+", "admissible":true, "start":0, "end":10, "release":"r1"},
+    {"proposition":"identity", "source":"binding", "polarity":"+", "admissible":true, "start":0, "end":10, "release":"r1"},
+    {"proposition":"identity", "source":"negative-control", "polarity":"-", "admissible":true, "start":0, "end":10, "release":"r1"},
+    {"proposition":"payment_path", "source":"expired-source", "polarity":"-", "admissible":true, "start":0, "end":5, "release":"r1"}
+  ],
+  "predicted_support": {"payment_path":"T", "identity":"T"},
+  "confidences": {"payment_path":0.9,"identity":0.9},
+  "threshold": 0.8,
+  "justification": {"payment_path":true,"identity":false}
+}

@@ -1,0 +1,23 @@
+ARCHGRAPHBENCH — PROOFREAD SUBMISSION CANDIDATE
+
+1. Extract into a NEW folder, for example C:\AGB_Submission.
+2. Open PowerShell in that folder. Python 3.11+ is required.
+3. Run:
+
+py -3 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-plots.txt
+.\.venv\Scripts\python.exe run_all_evidence.py --data data --out run_01 --demo --checks
+
+4. Open run_01\results\EVIDENCE_README.md.
+5. See table_VII_boutique.csv, table_VIII_membership.csv,
+   table_IX_replay.csv, calibration\annotated\results.json.
+
+Reference builder: build_reference.py (included in this folder).
+To build and use a new Boutique candidate, add --reference-mode generated
+and use a different --out directory. Candidate review is not automatic.
+
+Read validation\VERIFICATION.md before claiming every statement reproduced:
+one raw-direction sensitivity threshold statement is unresolved.
+
+The Markdown guide explains inputs, algorithms and outputs.
+DEMO_GUIDE.md explains live logging, detailed tracing and pause controls.
